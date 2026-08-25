@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+
+# Prescription documents and extracted health information are local-only.
+*.pdf
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.gif
+*.json
