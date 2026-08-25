@@ -133,7 +133,15 @@ class PrescriptionAgent:
                     "text": f"{SYSTEM_PROMPT}\nJSON schema:\n{json.dumps(EXTRACTION_SCHEMA)}"
                 }
             ],
-            messages=[{"role": "user", "content": [document_part]}],
+            messages=[
+                {
+                    "role": "user",
+                    "content": [
+                        {"text": "Extract the prescription details from this document."},
+                        document_part,
+                    ],
+                }
+            ],
             inferenceConfig={"temperature": 0},
         )
         response_text = "".join(
